@@ -16,7 +16,6 @@
 
 package com.google.android.things.contrib.driver.onewire;
 
-import android.support.annotation.VisibleForTesting;
 import android.util.Log;
 
 import com.google.android.things.pio.UartDevice;
@@ -25,6 +24,8 @@ import com.dalsemi.onewire.utils.CRC8;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+
+import androidx.annotation.VisibleForTesting;
 
 /**
  * Driver for the DS18B20 temperature sensor.
@@ -126,7 +127,7 @@ public class Ds18b20 implements AutoCloseable {
      *
      * @return the current temperature in degrees Celsius
      */
-    float readTemperature() throws IOException {
+    public float readTemperature() throws IOException {
         Log.i(TAG, "Reading Temperature.");
         mOneWire.oneWireCommand(DS18X20_CONVERT_T, getOneWireId());
         // Wait for conversion.

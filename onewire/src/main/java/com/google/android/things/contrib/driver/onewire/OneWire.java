@@ -16,7 +16,6 @@
 
 package com.google.android.things.contrib.driver.onewire;
 
-import android.support.annotation.VisibleForTesting;
 import android.util.Log;
 
 import com.google.android.things.pio.PeripheralManager;
@@ -24,6 +23,8 @@ import com.google.android.things.pio.UartDevice;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+
+import androidx.annotation.VisibleForTesting;
 
 public class OneWire implements AutoCloseable {
     private static final String TAG = OneWire.class.getSimpleName();
